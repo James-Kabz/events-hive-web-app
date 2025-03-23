@@ -1,5 +1,5 @@
 "use client";
-import { signIn } from "@/auth";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { toast } from "sonner";
@@ -12,6 +12,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  
   const router = useRouter();
   
   const handleLogin = async (e: React.FormEvent) => {
