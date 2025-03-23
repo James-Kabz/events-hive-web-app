@@ -20,24 +20,26 @@ import { useState } from "react";
 const items = [
   {
     title: "Home",
-    href: "/",
+    href: "/dashboard",
     icon: <Home className="mr-0 h-4 w-4" />,
   },
   {
     title: "Roles",
+    href: "/dashboard/roles",
     icon: <Users className="mr-2 h-4 w-4" />,
     collapsible: true,
     subItems: [
-      { title: "Create Role", href: "/roles/create", icon: <Plus className="mr-2 h-4 w-4" /> },
-      { title: "Edit Role", href: "/roles/edit", icon: <Edit className="mr-2 h-4 w-4" /> },
+      { title: "Create Role", href: "/dashboard/roles/create", icon: <Plus className="mr-2 h-4 w-4" /> },
+      { title: "Edit Role", href: "/dashboard/roles/edit", icon: <Edit className="mr-2 h-4 w-4" /> },
     ],
   },
   {
     title: "Permissions",
+    href: "/dashboard/permissions",
     icon: <Settings className="mr-2 h-4 w-4" />,
     collapsible: true,
     subItems: [
-      { title: "Manage Permissions", href: "/permissions/manage", icon: <Settings className="mr-2 h-4 w-4" /> },
+      { title: "Create Permission", href: "/dashboard/permissions/create", icon: <Settings className="mr-2 h-4 w-4" /> },
     ],
   },
   {
@@ -45,8 +47,8 @@ const items = [
     icon: <CalendarCheck className="mr-2 h-4 w-4" />,
     collapsible: true,
     subItems: [
-      { title: "Create Event", href: "/events/create", icon: <Plus className="mr-2 h-4 w-4" /> },
-      { title: "Edit Event", href: "/events/edit", icon: <Edit className="mr-2 h-4 w-4" /> },
+      { title: "Create Event", href: "/dashboard/events/create", icon: <Plus className="mr-2 h-4 w-4" /> },
+      { title: "Edit Event", href: "/dashboard/events/edit", icon: <Edit className="mr-2 h-4 w-4" /> },
     ],
   },
 ];
@@ -76,8 +78,10 @@ export function AppSidebar() {
                           className="flex justify-between items-center w-full"
                         >
                           <div className="flex items-center">
+                            <a href={item.href} className="flex items-center gap-2">
                             {item.icon}
                             <span>{item.title}</span>
+                            </a>
                           </div>
                           <ChevronDown
                             className={`h-4 w-4 transition-transform ${
