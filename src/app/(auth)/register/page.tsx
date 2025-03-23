@@ -11,7 +11,7 @@ import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 import axios from "axios";
 
-export default function SignupPage() {
+export default function RegisterPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,7 +32,7 @@ export default function SignupPage() {
     setIsLoading(true);
     
     try {
-      const response = await axios.post("/api/auth/sign-up", {
+      const response = await axios.post("/api/auth/register", {
           name,
           email,
           password,
@@ -127,7 +127,7 @@ export default function SignupPage() {
               </div>
             </div>
             <Button type="submit" className="w-full" disabled={isLoading}>
-              {isLoading ? "Creating Account..." : "Sign Up"}
+              {isLoading ? "Creating Account..." : "Register"}
             </Button>
           </form>
         </CardContent>
@@ -135,7 +135,7 @@ export default function SignupPage() {
           <div className="text-center text-sm">
             Already have an account?{" "}
             <Link href="/login" className="text-blue-600 hover:underline">
-              Sign in
+              Login in
             </Link>
           </div>
         </CardFooter>
