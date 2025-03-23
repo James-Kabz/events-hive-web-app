@@ -11,6 +11,10 @@ interface RoleSchema {
 // fetch all roles
 export async function GET() {
     try {
+        const session = await auth();
+        if (!session || !session.user) {
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
         const roles = await prisma.role.findMany({
             include: {
                 RolePermission: {
@@ -55,21 +59,21 @@ export async function POST(req: Request) {
                 description,
                 RolePermission: {
                     create: permissions?.map(permissionId => ({
-                        permission: {connect: {id: parseInt(permissionId, 10)}},
+                        permission: { connect: { id: parseInt(permissionId, 10) } },
                     })) || [],
                 },
             },
             include: {
                 RolePermission: {
-                    include: {permission:true}
+                    include: { permission: true }
                 },
             },
         });
 
         return NextResponse.json({
             ...role,
-            permissions: role.RolePermission.map(rp=> rp.permission),
-        }, {status: 201});
+            permissions: role.RolePermission.map(rp => rp.permission),
+        }, { status: 201 });
     } catch (error) {
         console.error("Error creating role:", error);
         return NextResponse.json({ error: "Failed to create role" }, { status: 500 });
