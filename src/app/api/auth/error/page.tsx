@@ -21,7 +21,7 @@ function ErrorContent() {
         
         <div className="mt-6 space-y-4">
           <Link
-            href="/auth/sign-in"
+            href="/auth/login"
             className="inline-block w-full bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 transition"
           >
             Try Again

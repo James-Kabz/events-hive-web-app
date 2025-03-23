@@ -37,7 +37,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         if (!credentials?.email || !credentials?.password) return null;
 
         try {
-          const response = await axios.post<SignInSchema>(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/sign-in`,
+          const response = await axios.post<SignInSchema>(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`,
             //  credentials
             {
               email: credentials.email,
@@ -111,7 +111,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
 
   pages: {
-    signIn: "auth/sign-in",
+    signIn: "/login",
     error: "api/auth/error",
   }
 });
