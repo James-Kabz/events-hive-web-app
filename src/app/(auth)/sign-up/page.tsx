@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import axios from "axios";
 
 export default function SignupPage() {
   const [name, setName] = useState("");
@@ -31,26 +32,16 @@ export default function SignupPage() {
     setIsLoading(true);
     
     try {
-      const response = await fetch("/api/auth/signup", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
+      const response = await axios.post("/api/auth/sign-up", {
           name,
           email,
           password,
-        }),
       });
       
-      const data = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to create account");
+      if (response.status === 201) {
+        toast.success("Account Created Successfully!");
+        router.push("/sign-in");
       }
-      
-      toast.success("Account created successfully!");
-      router.push("/login");
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "An unexpected error occurred");
       console.error(error);
