@@ -16,10 +16,10 @@ import {
 
 export default function LandingPage() {
   return (
-    <div className="flex min-h-screen flex-col items-center ">
+    <div className="flex min-h-screen flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-40 w-full items-center border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
+      <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div className="container max-w-7xl mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center gap-2">
             <Calendar className="h-6 w-6 text-primary" />
             <span className="text-xl font-bold">Events Hive</span>
@@ -55,9 +55,9 @@ export default function LandingPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-20 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-36">
+          <div className="container max-w-7xl mx-auto px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
@@ -94,7 +94,7 @@ export default function LandingPage() {
 
         {/* Features Section */}
         <section id="features" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Everything You Need for Events</h2>
@@ -137,7 +137,7 @@ export default function LandingPage() {
 
         {/* Discover Events Section */}
         <section id="discover" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Popular Events</h2>
@@ -146,7 +146,7 @@ export default function LandingPage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
+            <div className="mx-auto grid max-w-7xl gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div key={i} className="group relative overflow-hidden rounded-lg border">
                   <div className="aspect-video overflow-hidden">
@@ -189,7 +189,7 @@ export default function LandingPage() {
 
         {/* How It Works Section */}
         <section id="how-it-works" className="w-full py-12 md:py-24 lg:py-32 bg-muted">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">How Events Hive Works</h2>
@@ -228,12 +228,12 @@ export default function LandingPage() {
 
         {/* Pricing Section */}
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Simple, Transparent Pricing</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Choose the plan that&apos;s right for you.
+                  Choose the plan that& s right for you.
                 </p>
               </div>
             </div>
@@ -474,7 +474,7 @@ export default function LandingPage() {
 
         {/* CTA Section */}
         <section className="w-full py-12 md:py-24 lg:py-32 bg-primary text-primary-foreground">
-          <div className="container px-4 md:px-6">
+          <div className="container max-w-7xl mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
@@ -497,8 +497,8 @@ export default function LandingPage() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full min-w-full border-t py-6 md:py-0">
-        <div className="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+      <footer className="w-full border-t py-6 md:py-0">
+        <div className="container max-w-7xl mx-auto px-4 flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
           <div className="flex items-center gap-2">
             <Calendar className="h-6 w-6 text-primary" />
             <span className="text-lg font-bold">Events Hive</span>
