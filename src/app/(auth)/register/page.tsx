@@ -40,7 +40,7 @@ export default function RegisterPage() {
       
       if (response.status === 201) {
         toast.success("Account Created Successfully!");
-        router.push("/sign-in");
+        router.push("/login");
       }
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "An unexpected error occurred");
